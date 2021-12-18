@@ -21,17 +21,133 @@
   <!-- Часть initial-scale=1.0 устанавливает начальный уровень масштабирования при первой загрузке страницы браузером. -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Обновление страницы раз в 2 минуты -->
-  <meta http-equiv="refresh" content="120" />
+  <meta http-equiv="refresh" content="3600" />
   <!-- Определяет адрес по умолчанию или цель[taret] по умолчанию для всех ссылок на странице -->
   <base href="" target="_blank" />
 
-  <!-- Определяет связь между документом и внешним ресурсом. Favicon -->
+  <!-- Определяет связь между документом и внешним ресурсом. Favicon 
+       Ссылка на внешний CSS -->
   <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
   <!-- CSS Styles -->
   <link rel="stylesheet" href="styles/style.css" />
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- Внутренний[Internal] CSS используется для определения стиля для одной HTML-страницы. -->
+  <style>
+    body {
+      text-align: center;
+      font-family: verdana;
+      color: darkorchid;
+      background-color: powderblue;
+    }
+
+    main {
+      padding: 20px;
+      background-color: #F7F2D4;
+    }
+
+    body>header {
+      padding: 20px;
+      background-color: #5A18C9;
+    }
+
+    .section-1 {
+      color: black;
+      background-color: #347B98;
+    }
+
+    aside {
+      display: inline-block;
+      width: 50%;
+    }
+
+    .section-2{
+      display: inline-block;
+      width: 75%;
+    }
+
+    footer {
+      background-color: #2A0934;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    img {
+      width: 200px;
+    }
+
+    mark {
+      color: darkorchid;
+      background-color: cornsilk;
+
+    }
+
+    figure {
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid darkorchid;
+    }
+
+    summary {
+      list-style: none;
+    }
+
+    var,
+    sub,
+    sup,
+    del,
+    i,
+    em,
+    small,
+    ins,
+    abbr,
+    cite {
+      background-color: gold;
+    }
+
+    pre {
+      margin: 0 35%;
+      padding: 10px;
+      background-color: white;
+    }
+
+    code,
+    samp,
+    kbd {
+      display: inline-block;
+      margin: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+  
+
+    a {
+      text-decoration: none;
+      color: #F7F2D4;
+    }
+
+    a:hover {
+      color: #FDDC22;
+    }
+
+    h1 {
+      font-size: 70px;
+      font-family: 'Moo Lah Lah', cursive;
+      color: #FDDC22;
+    }
+
+    h2 {
+      font-size: 300%;
+    }
+  </style>
   <!-- Элемент <title> задает заголовок HTML-страницы [который отображается в строке заголовка браузера или на вкладке страницы]. -->
   <title>SelfTesting</title>
 </head>
@@ -43,16 +159,16 @@
        Свойство CSS color определяет цвет текста для элемента HTML.
        Свойство CSS font-family определяет шрифт, который будет использоваться для элемента HTML. -->
 
-<body style="text-align: center;font-family: verdana;color:darkorchid;background-color: powderblue; border: 1px solid red;">
+<body>
   <!-- Элемент <header> представляет собой контейнер для вводного содержимого или набора навигационных ссылок. -->
   <header>
     <!-- Заголовки HTML определяются с помощью тегов <h1> - <h6>.
            <h1> определяет наиболее важный заголовок. <h6> определяет наименее важный заголовок. 
             Браузеры автоматически добавляют некоторое белое пространство (отступ) перед и после заголовка.-->
-    <h1>Hello, <mark style="color:darkorchid;background-color:cornsilk">world</mark>!</h1>
+    <h1>Hello, world!</h1>
     <!-- Изображения в HTML задаются с помощью тега <img>.
            В качестве атрибутов указываются исходный файл [src], альтернативный текст [alt], width и height: -->
-    <img src="images/drums.png" alt="logo-img" width="200px" height="" />
+    <img src="images/drums.png" alt="logo-img" />
     <!-- Элемент <nav> определяет набор навигационных ссылок. -->
     <nav>
       <!-- Ссылки в HTML задаются с помощью тега <a>
@@ -62,150 +178,150 @@
       <a href="#">GitHub</a>
       <a href="#">About me</a>
     </nav>
-    <!-- Тег <main> определяет основное содержание документа. -->
-    <main style="border: 1px solid yellow;">
-      <!-- artile[Статья] должна иметь смысл сама по себе, 
+  </header>
+  <!-- Тег <main> определяет основное содержание документа. -->
+  <main>
+    <!-- artile[Статья] должна иметь смысл сама по себе, 
              и должна быть возможность распространять ее независимо от остальной части сайта. -->
-      <article>
-        <header>
-          <!-- Свойство CSS font-size определяет размер текста для элемента HTML. -->
-          <h2 style="font-size: 300%;">Lorem, ipsum.</h2>
-          <!-- Абзацы HTML определяются с помощью тега <p> 
+    <article>
+      <header>
+        <!-- Свойство CSS font-size определяет размер текста для элемента HTML. -->
+        <h2>Header title</h2>
+        <!--     Абзацы HTML определяются с помощью тега 
                  Абзац всегда начинается с новой строки, и браузеры автоматически добавляют 
                  немного белого пространства [поля] до и после абзаца.-->
-          <p>
-            <!-- Тег <pre> определяет предварительно отформатированный текст. -->
-            <!-- Текст внутри элемента <pre> отображается шрифтом фиксированной ширины [обычно Courier] и сохраняет пробелы и переносы строк.
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam odit fugit modi debitis veniam exercitationem
+          illo, dicta corporis, ipsa culpa autem doloribus veritatis laboriosam! Inventore, magni ullam? Distinctio
+          mollitia cum facilis amet dolorem ut quia dolore nobis est, officiis ullam?
+        </p>
+        <!-- Тег <pre> определяет предварительно отформатированный текст. -->
+        <!-- Текст внутри элемента <pre> отображается шрифтом фиксированной ширины [обычно Courier] и сохраняет пробелы и переносы строк.
                    Текст в элементе <pre> отображается шрифтом фиксированной ширины, при этом в тексте сохраняются пробелы и переносы строк. 
                    Текст отображается точно так, как он написан в исходном коде HTML. -->
-          <pre>
+        <pre>
 Lorem ipsum dolor sit amet consectetur adipisicing elit.  
 Eligendi,aperiam!
         </pre>
-          <!-- Тег <code> используется для определения фрагмента компьютерного кода. Содержимое кода отображается моноширинным шрифтом браузера по умолчанию. -->
-          <!-- Этот тег не является устаревшим. Однако можно добиться более богатого эффекта с помощью CSS. -->
-          <code>
-Lorem ipsum dolor sit amet consectetur adipisicing elit.  
-Eligendi,aperiam!
+        <!-- Тег <code> используется для определения фрагмента компьютерного кода. Содержимое кода отображается моноширинным шрифтом браузера по умолчанию. -->
+        <!-- Этот тег не является устаревшим. Однако можно добиться более богатого эффекта с помощью CSS. -->
+        <code>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.  
+            Eligendi,aperiam!
         </code>
-          <!-- Тег <samp> используется для определения образца вывода компьютерной программы. Содержимое внутри отображается моноширинным шрифтом браузера по умолчанию. -->
-          <samp>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi,aperiam!
-          </samp>
-          <!-- Тег <kbd> используется для определения клавиатурного ввода. Содержимое внутри отображается моноширинным шрифтом браузера по умолчанию. -->
-          <kbd>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eligendi,aperiam!
-          </kbd>
-          <!-- Тег <var> используется для определения переменной в программировании или в математическом выражении. Содержимое внутри обычно отображается курсивом. -->
-          <var style="background-color:gold;"><br>x = x * x</var>
-          H<sub style="background-color:gold;">2</sub>O
-          <sup style="background-color:gold;">lets</sup>.GO.com
-          </p>
-        </header>
+        <!-- Тег <samp> используется для определения образца вывода компьютерной программы. Содержимое внутри отображается моноширинным шрифтом браузера по умолчанию. -->
+        <samp>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eligendi,aperiam!
+        </samp>
+        <!-- Тег <kbd> используется для определения клавиатурного ввода. Содержимое внутри отображается моноширинным шрифтом браузера по умолчанию. -->
+        <kbd>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Eligendi,aperiam!
+        </kbd>
+        <!-- Тег <var> используется для определения переменной в программировании или в математическом выражении. Содержимое внутри обычно отображается курсивом. -->
+        <br></be><var>x</var> = <var>x</var> * <var>x</var>
+        H<sub>2</sub>O
+        <sup>lets</sup>.GO.com
+        </p>
         <p>
           <!-- Тег <br> определяет перенос строки и является пустым элементом без закрывающего тега. -->
           <!-- Элемент HTML <del> определяет текст, который был удален из документа. Браузеры обычно проводят линию через удаленный текст: -->
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-          architecto <del style="background-color:gold;">dolorem minima reprehenderit</del> error,<br> optio nam
+          architecto <del>dolorem minima reprehenderit</del> error,<br> optio nam
           recusandae
           quisquam incidunt enim voluptatibus perferendis quos sapiente
           laudantium voluptate officiis facere ut repellendus.
         </p>
-      </article>
-      <!-- Элемент <hr> используется для разделения содержимого [или определения изменения] на HTML-странице: -->
-      <hr>
-    </main>
-    <!-- Тег <figure> определяет автономный контент, такой как иллюстрации, диаграммы, фотографии, листинги кода и т.д. 
+    </article>
+    <!-- Элемент <hr> используется для разделения содержимого [или определения изменения] на HTML-странице: -->
+  </main>
+  <!-- Тег <figure> определяет автономный контент, такой как иллюстрации, диаграммы, фотографии, листинги кода и т.д. 
            Eсли его удалить, он не должен влиять на ход документа  -->
-    <figure style="background-color:khaki">
-      <img src="images/placeHolderImg1.jpg " alt="pf-img1" width="300px" height="" />
-      <!-- Тег <figcaption> определяет подпись для элемента <figure>.
+  <!-- <figure>
+    <img src="images/placeHolderImg1.jpg " alt="pf-img1" />
+    <!-- Тег <figcaption> определяет подпись для элемента <figure>.
              Элемент <figcaption> может быть размещен в качестве первого[first child] 
-             или последнего[last child]  дочернего элемента элемента <figure>. -->
-      <figcaption>Lorem ipsum dolor sit amet consectetur.</figcaption>
-    </figure>
-    <hr>
-    <!-- section[Раздел] - это тематическая группа содержимого, обычно с заголовком -->
-    <section style="border: 1px solid blue">
-      <!-- Тег <summary> определяет видимый заголовок для элемента <details>. Заголовок можно щелкнуть для просмотра/скрытия подробностей.
+             или последнего[last child]  дочернего элемента элемента <figure>. 
+    <figcaption>Lorem ipsum dolor sit amet consectetur.</figcaption>
+  </figure> -->
+  <!-- section[Раздел] - это тематическая группа содержимого, обычно с заголовком -->
+  <section class="section-1">
+    <!-- Тег <summary> определяет видимый заголовок для элемента <details>. Заголовок можно щелкнуть для просмотра/скрытия подробностей.
              Элемент <summary> должен быть первым дочерним элементом элемента <details>.  -->
-      <!-- list-style: устанавливает все свойства для списка в одном объявлении -->
-      <summary style="list-style: none;">Lorem, ipsum.</summary>
-      <!-- Определяет дополнительные детали, которые пользователь может просматривать или скрывать -->
-      <details>
-        <p>
-          <!-- Элемент HTML <b> определяет полужирный текст без дополнительного значения.
+    <!-- list-style: устанавливает все свойства для списка в одном объявлении -->
+    <summary>Lorem, ipsum.</summary>
+    <!-- Определяет дополнительные детали, которые пользователь может просматривать или скрывать -->
+    <details>
+      <p>
+        <!-- Элемент HTML <b> определяет полужирный текст без дополнительного значения.
                  Элемент HTML <strong> определяет текст с важным значением. Содержимое элемента обычно выделяется жирным шрифтом. -->
-          Lorem ipsum <strong style="background-color:gold;">dollar</strong> sit amet consectetur adipisicing elit.
-          Rerum
-          architecto <b style="background-color:gold;">dolorem minima reprehenderit error</b>,<br> optio nam recusandae
-          quisquam incidunt enim titanic perferendis quos sapiente
-          laudantium voluptate officiis facere ut repellendus.
-        </p>
-      </details>
-    </section>
-    <hr>
-    <aside style="border: 1px solid orange">
-      <h3>Lorem, ipsum.</h3>
-      <p>
-        <!-- Элемент HTML <i> задает часть текста альтернативным голосом или настроением. Содержимое внутри элемента обычно выделяется курсивом.
+        Lorem ipsum <strong style="background-color:gold;">dollar</strong> sit amet consectetur adipisicing elit.
+        Rerum
+        architecto <b style="background-color:gold;">dolorem minima reprehenderit error</b>,<br> optio nam recusandae
+        quisquam incidunt enim titanic perferendis quos sapiente
+        laudantium voluptate officiis facere ut repellendus.
+      </p>
+    </details>
+  </section>
+  <aside>
+    <h3>Lorem, ipsum.</h3>
+    <p>
+      <!-- Элемент HTML <i> задает часть текста альтернативным голосом или настроением. Содержимое внутри элемента обычно выделяется курсивом.
                Тег <i> часто используется для обозначения технического термина, фразы из другого языка, мысли, названия судна и т.д. -->
-        Lorem ipsum, dolor sit <i style="background-color:gold;">Knowledge</i> amet consectetur adipisicing elit.
-        Officia
-        placeat culpa assumenda deleniti sunt sed.
-      </p>
-    </aside>
-    <hr>
-    <section style="border: 1px solid blue">
-      <h2>Lorem.</h2>
-      <p>
-        <!-- Элемент HTML <em> определяет подчеркнутый текст. Содержимое внутри него обычно отображается курсивом. -->
-        <!-- Устройство для чтения с экрана будет произносить слова в <em> с ударением, используя словесное подчеркивание. -->
-        <!-- Элемент HTML <ins> определяет текст, который был вставлен в документ. Браузеры обычно подчеркивают вставленный текст: -->
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-        architecto <em style="background-color:gold;">show must gone</em> reprehenderit error,<br> optio nam recusandae
-        quisquam incidunt <small style="background-color:gold;"> polite man </small>voluptatibus perferendis quos
-        sapiente
-        <ins style="background-color:gold;">laudantium voluptate officiis</ins> facere ut repellendus.
-      <p>
-        <!-- Элемент HTML <blockquote> определяет раздел, который цитируется из другого источника. -->
-        <!-- Браузеры обычно делают отступ от элементов <blockquote>. -->
-      <blockquote cite="http://www.worldwildlife.org/who/index.html">Lorem ipsum dolor sit amet, consectetur adipisicing
-        elit.</blockquote> Labore nulla accusamus animi sed error sint,
-      molestias praesentium repellendus repudiandae facere quas earum harum, alias tenetur eaque obcaecati fugiat.
-      Nesciunt, quod?</p>
-      <!-- Тег HTML <q> определяет короткую цитату. -->
-      <!-- Браузеры обычно вставляют кавычки вокруг цитаты. -->
-      <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, optio?</q>
-      <!-- Тег HTML <abbr> определяет аббревиатуру или акроним, например, "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".
+      Lorem ipsum, dolor sit <i>Knowledge</i> amet consectetur adipisicing elit.
+      Officia
+      placeat culpa assumenda deleniti sunt sed.
+    </p>
+  </aside>
+  <section class="section-2">
+    <h2>Lorem.</h2>
+    <p>
+      <!-- Элемент HTML <em> определяет подчеркнутый текст. Содержимое внутри него обычно отображается курсивом. -->
+      <!-- Устройство для чтения с экрана будет произносить слова в <em> с ударением, используя словесное подчеркивание. -->
+      <!-- Элемент HTML <ins> определяет текст, который был вставлен в документ. Браузеры обычно подчеркивают вставленный текст: -->
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+      architecto <em>show must gone</em> reprehenderit error,<br> optio nam recusandae
+      quisquam incidunt <small> polite man </small>voluptatibus perferendis quos
+      sapiente
+      <ins>laudantium voluptate officiis</ins> facere ut repellendus.
+    <p>
+      <!-- Элемент HTML <blockquote> определяет раздел, который цитируется из другого источника. -->
+      <!-- Браузеры обычно делают отступ от элементов <blockquote>. -->
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit.</blockquote> Labore nulla accusamus animi sed error sint,
+    molestias praesentium repellendus repudiandae facere quas earum harum, alias tenetur eaque obcaecati fugiat.
+    Nesciunt, quod?</p>
+    <!-- Тег HTML <q> определяет короткую цитату. -->
+    <!-- Браузеры обычно вставляют кавычки вокруг цитаты. -->
+    <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, optio?</q>
+    <!-- Тег HTML <abbr> определяет аббревиатуру или акроним, например, "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".
                    Обозначение аббревиатур может дать полезную информацию браузерам, системам перевода и поисковым машинам. -->
-      <!-- Используйте глобальный атрибут title для отображения описания аббревиатуры/акронима при наведении курсора мыши на элемент -->
-      <br><abbr title="HyperText Markup Language" style="background-color:gold;">HTML</abbr>
-      <!-- Тег HTML <address> определяет контактную информацию для автора/владельца документа или статьи.
+    <!-- Используйте глобальный атрибут title для отображения описания аббревиатуры/акронима при наведении курсора мыши на элемент -->
+    <br><abbr>HTML</abbr>
+    <!-- Тег HTML <address> определяет контактную информацию для автора/владельца документа или статьи.
                    Контактной информацией может быть адрес электронной почты, URL, физический адрес, номер телефона, название социальной сети и т.д. -->
-      <!-- Текст в элементе <address> обычно отображается курсивом, и браузеры всегда добавляют перенос строки до и после элемента <address>. -->
-      <br>
-      <address>
-        Written by John Doe.<br>
-        Visit us at:<br>
-        Example.com<br>
-        Box 564, Disneyland<br>
-        USA
-      </address>
-      <!-- Тег HTML <cite> определяет название творческого произведения [например, книги, стихотворения, песни, фильма, картины, скульптуры и т.д.] -->
-      <!-- Имя человека не является названием произведения. Текст в элементе <cite> обычно выделяется курсивом. -->
-      <cite style="background-color:gold;">The Lord of the Rings</cite>
-      <!-- BDO расшифровывается как Bi-Directional Override.
+    <!-- Текст в элементе <address> обычно отображается курсивом, и браузеры всегда добавляют перенос строки до и после элемента <address>. -->
+    <br>
+    <address>
+      Written by John Doe.<br>
+      Visit us at:<br>
+      Example.com<br>
+      Box 564, Disneyland<br>
+      USA
+    </address>
+    <!-- Тег HTML <cite> определяет название творческого произведения [например, книги, стихотворения, песни, фильма, картины, скульптуры и т.д.] -->
+    <!-- Имя человека не является названием произведения. Текст в элементе <cite> обычно выделяется курсивом. -->
+    <cite>The Lord of the Rings</cite>
+    <!-- BDO расшифровывается как Bi-Directional Override.
         Тег HTML <bdo> используется для переопределения текущего направления текста: -->
-      <br><bdo dir="rtl">Harry Potter</bdo>
-      </p>
-    </section>
-    <hr>
+    <br><bdo dir="rtl">Harry Potter</bdo>
+    </p>
+  </section>
+
   </header>
   <!-- Элемент <footer> определяет нижнюю часть  документа или раздела. -->
-  <footer style="border: 1px solid green">
+  <footer>
     <!-- Сведения об авторстве -->
     <p>Author: CandyBoB</p>
     <!-- Контактная информация -->
@@ -214,7 +330,7 @@ Eligendi,aperiam!
     <p>© 2021 CandyBoB</p>
   </footer>
 
-  <!-- JavaScript on the Site -->
+  <!-- JavaScript на сайте -->
   <script src="scripts/index.js"></script>
   <!-- SVG Icons -->
   <script src="https://kit.fontawesome.com/7f634d8de8.js" crossorigin="anonymous"></script>
