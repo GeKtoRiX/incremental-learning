@@ -27,6 +27,9 @@
 
   <!-- Определяет связь между документом и внешним ресурсом. Favicon 
        Ссылка на внешний CSS -->
+  <!-- Чтобы добавить favicon на свой сайт, либо сохраните изображение favicon в корневом каталоге вашего веб-сервера, 
+       либо создайте в корневом каталоге папку images и сохраните изображение favicon в этой папке.
+       Обычное название изображения favicon - "favicon.ico". -->
   <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
   <!-- CSS Styles -->
   <link rel="stylesheet" href="styles/style.css" />
@@ -48,7 +51,22 @@
 
     main {
       padding: 20px;
+      color: deeppink;
       background-color: #F7F2D4;
+      /* background-position-y: center; */
+      /* Чтобы добавить фоновое изображение в элемент HTML, используйте атрибут HTML style и свойство CSS background-image.
+         Если фоновое изображение меньше элемента, изображение будет повторяться по горизонтали и вертикали, пока не достигнет конца элемента. */
+      background-image: url(images/pexels-marishalaugh-8846861.jpg);
+      /* Чтобы фоновое изображение не повторялось, установите для свойства background-repeat значение no-repeat. */
+      background-repeat: no-repeat;
+      /* Если вы хотите, чтобы фоновое изображение покрывало весь элемент, можно установить свойство background-size в значение cover.
+         Также, чтобы убедиться, что элемент всегда покрывается целиком, задайте свойству background-attachment значение fixed:
+         Таким образом, фоновое изображение будет покрывать весь элемент без растягивания [изображение сохранит свои первоначальные пропорции] */
+      background-size: cover;
+      background-attachment: fixed;
+      /* Если вы хотите, чтобы фоновое изображение растягивалось, чтобы поместиться на весь элемент, 
+            вы можете установить свойство background-size равным 100% 100%: */
+      background-size: 100% 100%;
     }
 
     body>header {
@@ -66,7 +84,7 @@
       width: 50%;
     }
 
-    .section-2{
+    .section-2 {
       display: inline-block;
       width: 75%;
     }
@@ -79,10 +97,6 @@
       margin: 0;
     }
 
-    img {
-      width: 200px;
-    }
-
     mark {
       color: darkorchid;
       background-color: cornsilk;
@@ -90,9 +104,13 @@
     }
 
     figure {
+      border-radius: 10px;
       margin: 10px;
       padding: 20px;
-      border: 1px solid darkorchid;
+    }
+
+    figure img {
+      width: 300px;
     }
 
     summary {
@@ -127,15 +145,31 @@
       margin-bottom: 20px;
     }
 
-  
-
     a {
       text-decoration: none;
       color: #F7F2D4;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    a:link {
+      color: green;
+    }
+
+    a:visited {
+      color: coral;
+      background-color: transparent;
+      text-decoration: none;
     }
 
     a:hover {
       color: #FDDC22;
+    }
+
+    a:active {
+      color: yellow;
+      background-color: transparent;
+      text-decoration: underline;
     }
 
     h1 {
@@ -149,7 +183,7 @@
     }
   </style>
   <!-- Элемент <title> задает заголовок HTML-страницы [который отображается в строке заголовка браузера или на вкладке страницы]. -->
-  <title>SelfTesting</title>
+  <title>SelfStudying</title>
 </head>
 
 <!-- Тег <body> определяет тело документа. 
@@ -165,18 +199,18 @@
     <!-- Заголовки HTML определяются с помощью тегов <h1> - <h6>.
            <h1> определяет наиболее важный заголовок. <h6> определяет наименее важный заголовок. 
             Браузеры автоматически добавляют некоторое белое пространство (отступ) перед и после заголовка.-->
-    <h1>Hello, world!</h1>
+    <h1 id="A1">Hello, world!</h1>
     <!-- Изображения в HTML задаются с помощью тега <img>.
            В качестве атрибутов указываются исходный файл [src], альтернативный текст [alt], width и height: -->
-    <img src="images/drums.png" alt="logo-img" />
+    <a href="#" target="_blank"><img src="images/drums.png" alt="logo-img" /></a>
     <!-- Элемент <nav> определяет набор навигационных ссылок. -->
     <nav>
       <!-- Ссылки в HTML задаются с помощью тега <a>
              Место назначения ссылки указывается в атрибуте href.  -->
-      <a href="#">Home</a>
-      <a href="#">Active Projects</a>
-      <a href="#">GitHub</a>
-      <a href="#">About me</a>
+      <a href="#" target="_self">Home</a>
+      <a href="#" target="_blank">Active Projects</a>
+      <a href="#" target="_parent">GitHub</a>
+      <a href="#" target="_top">About me</a>
     </nav>
   </header>
   <!-- Тег <main> определяет основное содержание документа. -->
@@ -236,15 +270,6 @@ Eligendi,aperiam!
     </article>
     <!-- Элемент <hr> используется для разделения содержимого [или определения изменения] на HTML-странице: -->
   </main>
-  <!-- Тег <figure> определяет автономный контент, такой как иллюстрации, диаграммы, фотографии, листинги кода и т.д. 
-           Eсли его удалить, он не должен влиять на ход документа  -->
-  <!-- <figure>
-    <img src="images/placeHolderImg1.jpg " alt="pf-img1" />
-    <!-- Тег <figcaption> определяет подпись для элемента <figure>.
-             Элемент <figcaption> может быть размещен в качестве первого[first child] 
-             или последнего[last child]  дочернего элемента элемента <figure>. 
-    <figcaption>Lorem ipsum dolor sit amet consectetur.</figcaption>
-  </figure> -->
   <!-- section[Раздел] - это тематическая группа содержимого, обычно с заголовком -->
   <section class="section-1">
     <!-- Тег <summary> определяет видимый заголовок для элемента <details>. Заголовок можно щелкнуть для просмотра/скрытия подробностей.
@@ -269,10 +294,67 @@ Eligendi,aperiam!
     <p>
       <!-- Элемент HTML <i> задает часть текста альтернативным голосом или настроением. Содержимое внутри элемента обычно выделяется курсивом.
                Тег <i> часто используется для обозначения технического термина, фразы из другого языка, мысли, названия судна и т.д. -->
-      Lorem ipsum, dolor sit <i>Knowledge</i> amet consectetur adipisicing elit.
-      Officia
-      placeat culpa assumenda deleniti sunt sed.
+
+      <!-- Свойство CSS float, зображение плавает[float] справа или слева от текста: -->
+      <img src="images/programming.gif" style="width: 50px; float:left" alt="programming-gif"> Lorem ipsum, dolor sit
+      <i>Knowledge</i> amet consectetur adipisicing elit.
+      Officiaplaceat culpa assumenda deleniti sunt sed.
     </p>
+    <!-- Тег <figure> определяет автономный контент, такой как иллюстрации, диаграммы, фотографии, листинги кода и т.д. 
+           Eсли его удалить, он не должен влиять на ход документа  -->
+    <figure>
+      <!-- 
+        Элемент HTML <picture> предоставляет веб-разработчикам большую гибкость в определении ресурсов изображений.
+        Элемент <picture> содержит один или несколько элементов <source>, каждый из которых ссылается на различные изображения через атрибут srcset. 
+        Таким образом, браузер может выбрать изображение, которое лучше всего подходит для текущего вида и/или устройства.
+        Каждый элемент <source> имеет атрибут media, который определяет, когда изображение является наиболее подходящим.-->
+      <!-- Всегда указывайте элемент <img> в качестве последнего дочернего элемента элемента <picture>. 
+             Элемент <img> используется браузерами, которые не поддерживают элемент <picture>, или если ни один из тегов <source> не подходит. -->
+      <!-- Если у вас маленький экран или устройство, нет необходимости загружать большой файл изображения. 
+             Браузер будет использовать первый элемент <source> с подходящими значениями атрибутов и игнорировать любые следующие элементы. -->
+      <!-- Некоторые браузеры или устройства могут поддерживать не все форматы изображений. 
+           Используя элемент <picture>, вы можете добавлять изображения всех форматов, при этом браузер будет использовать первый распознанный им формат 
+           и игнорировать любые из следующих элементов. -->
+
+      <picture>
+        <source media="(min-width: 768px)" srcset="images/placeHolderImg1.jpg">
+        <source media="(min-width: 1024px)" srcset="images/pexels-marishalaugh-8846861.jpg">
+        <img src="images/placeHolderImg1.jpg" />
+      </picture>
+      <img src="images/placeHolderImg1.jpg" alt="pf-img1" usemap="#workmap" />
+      <!-- Единственное отличие от других изображений заключается в том, что вы должны добавить атрибут usemap.
+         Значение usemap начинается с хэш-тега #, за которым следует имя карты изображения, и используется для создания связи между изображением и картой изображения. -->
+      <!--Элемент <map> используется для создания карты изображения и связан с изображением с помощью обязательного атрибута name/ -->
+      <map name="workmap">
+        <!-- Вы должны определить форму[shape] кликабельной области.
+      rect - определяет прямоугольную область.
+        Координаты для shape="rect" идут парами, одна для оси x, другая для оси y.
+      circle - определяет круглую область.
+        Чтобы добавить область круга, сначала найдите координаты центра круга.
+        Затем укажите радиус окружности.
+      poly - определяет многоугольную область.
+        Может быть использовано для создания любой фигуры.
+        shape="poly" содержит несколько координатных точек, что создает фигуру, образованную прямыми линиями[многоугольник].
+      default - определяет весь диапазон -->
+        <area target="_blank" alt="one" title="one" href="#" coords="96,111,216,129" shape="rect">
+        <area target="_blank" alt="two" title="two" href="#" coords="95,137,216,156" shape="rect">
+        <area target="_blank" alt="three" title="three" href="#" coords="94,164,216,182" shape="rect">
+        <area target="_blank" alt="three" title="four" href="#" onclick="testWorkMapAllert()" coords="200,258,10"
+          shape="circle">
+        <script>
+          function testWorkMapAllert() {
+            alert("Do you have any questions?");
+          }
+        </script>
+        <area target="_blank" alt="three" title="five" href="#" coords="87,338,218,338,232,350,219,361,87,358,87,338"
+          shape="poly">
+
+      </map>
+      <!-- Тег <figcaption> определяет подпись для элемента <figure>. 
+             Элемент <figcaption> может быть размещен в качестве первого[first child] 
+             или последнего[last child]  дочернего элемента элемента <figure>.  -->
+      <figcaption>Lorem ipsum dolor sit amet consectetur.</figcaption>
+    </figure>
   </aside>
   <section class="section-2">
     <h2>Lorem.</h2>
@@ -317,6 +399,7 @@ Eligendi,aperiam!
         Тег HTML <bdo> используется для переопределения текущего направления текста: -->
     <br><bdo dir="rtl">Harry Potter</bdo>
     </p>
+    <a href="#A1" target="_self">Back to top </a>
   </section>
 
   </header>
